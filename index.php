@@ -31,10 +31,10 @@
     </ul>
     <h3>Te recomendamos:</h3>
     <h2>1984</h2>
-    <img
-      width="250px"
-      src="https://www.popularlibros.com/imagenes-webp-grandes/9780141/978014103614.webp"
-      alt="Foto de un libro"
-    />
+    <img width="250px" src="https://www.popularlibros.com/imagenes-webp-grandes/9780141/978014103614.webp" alt="Foto de un libro" />
+    <?php
+      echo $saludo;
+      echo '<img src="' . $imagen . '" alt="Imagen de libro recomendado" />';
+    ?>
   </body>
 </html>
