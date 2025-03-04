@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Tienda de Libros</title>
   </head>
   <body>
     <?php
@@ -30,8 +30,8 @@
       <li>Ficción</li>
     </ul>
     <h3>Te recomendamos:</h3>
-    <h2>1984</h2>
-    <img width="250px" src="https://www.popularlibros.com/imagenes-webp-grandes/9780141/978014103614.webp" alt="Foto de un libro" />
+    <h2><?php echo $usuario['genero']; ?></h2>
+    <img width="250px" src="<?php echo $imagen; ?>" alt="Imagen de libro recomendado" />
     <?php
       echo $saludo;
       echo '<img src="' . $imagen . '" alt="Imagen de libro recomendado" />';
