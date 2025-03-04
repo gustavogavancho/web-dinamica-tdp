@@ -6,6 +6,22 @@
     <title>Document</title>
   </head>
   <body>
+    <?php
+      $conexion = mysqli_connect('localhost', 'DCU', 'contraseña');
+      if (!$conexion) die('Error de conexión');
+      mysqli_select_db($conexion, "DCU");
+
+      $id = isset($_GET["id"]) ? $_GET["id"] : 1;
+
+      // Obtener datos del usuario
+      $consulta = "SELECT nombre, genero, formato FROM Emanuel_Gustavo_Rafael2025 WHERE id = $id";
+      $resultado = mysqli_query($conexion, $consulta);
+      $usuario = mysqli_fetch_assoc($resultado);
+
+      // Personalizar saludo e imagen
+      $saludo = "¡Hola " . $usuario['nombre'] . "! Te recomendamos estos libros de <strong>" . $usuario['genero'] . "</strong> en formato <strong>" . $usuario['formato'] . "</strong>.";
+      $imagen = strtolower($usuario['genero']) . "-" . strtolower($usuario['formato']) . ".jpg";
+    ?>
     <h1>Bienvenidos a nuestra tienda de libros</h1>
     <p>Encuentra los mejores libros a los mejores precios.</p>
     <h2>Como sabemos que te gusta</h2>
